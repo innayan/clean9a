@@ -42,7 +42,7 @@ project {
             }
             preserveArtifactsDependencies = true
         }
-    }
+    
     keep {
             id = "KEEP_RULE_100"
             keepAtLeast = builds(411)
