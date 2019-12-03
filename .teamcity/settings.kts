@@ -75,6 +75,13 @@ object Cleanup9con : BuildType({
             preserveArtifactsDependencies = true
         }
         keep {
+            disabled = false
+            id = "KEEP_RULE_118"
+            keepAtLeast = builds(555555)
+            dataToKeep = everything()
+            preserveArtifactsDependencies = true
+        }
+        keep {
             disabled = true
             id = "KEEP_RULE_129"
             keepAtLeast = allBuilds()
