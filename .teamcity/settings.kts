@@ -57,7 +57,7 @@ project {
             preserveArtifactsDependencies = true
         }
     }
-}
+
 
 object Cleanup9con : BuildType({
     name = "cleanup9con"
