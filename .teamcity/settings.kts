@@ -44,7 +44,7 @@ project {
         }
     
     keep {
-            id = "KEEP_RULE_100"
+            id = "KEEP_RULE_101"
             keepAtLeast = builds(411)
             applyToBuilds {
                 inBranches("+:*project11")
