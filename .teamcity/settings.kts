@@ -43,6 +43,20 @@ project {
             preserveArtifactsDependencies = true
         }
     }
+    keep {
+            id = "KEEP_RULE_100"
+            keepAtLeast = builds(411)
+            applyToBuilds {
+                inBranches("+:*project11")
+                inPersonalBuilds = nonPersonal()
+                withStatus = successful()
+            }
+            dataToKeep = historyAndStatistics {
+                preserveArtifacts = all()
+            }
+            preserveArtifactsDependencies = true
+        }
+    }
 }
 
 object Cleanup9con : BuildType({
