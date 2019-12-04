@@ -12,5 +12,17 @@ in the project with id = 'Cleanup9x_Cleanup9y', and delete the patch script.
 create(RelativeId("Cleanup9x_Cleanup9y"), Project({
     id("Cleanup9x_Cleanup9y_Cleanup9z")
     name = "cleanup9z"
+
+    cleanup {
+        keep {
+            id = "KEEP_RULE_119"
+            keepAtLeast = allBuilds()
+            applyToBuilds {
+                inBranches("+:*own")
+            }
+            dataToKeep = everything()
+            preserveArtifactsDependencies = true
+        }
+    }
 }))
 
