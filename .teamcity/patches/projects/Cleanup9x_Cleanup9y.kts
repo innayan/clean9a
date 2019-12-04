@@ -11,6 +11,6 @@ in the project with id = 'Cleanup9x', and delete the patch script.
 */
 create(RelativeId("Cleanup9x"), Project({
     id("Cleanup9x_Cleanup9y")
-    name = "cleanup9y"
+    name = "subproject for subproject cleanup9"
 }))
 
