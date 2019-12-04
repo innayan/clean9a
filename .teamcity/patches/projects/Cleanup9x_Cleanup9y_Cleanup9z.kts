@@ -28,6 +28,19 @@ create(RelativeId("Cleanup9x_Cleanup9y"), Project({
             preserveArtifactsDependencies = true
         }
         keep {
+            id = "KEEP_RULE_101"
+            keepAtLeast = builds(411)
+            applyToBuilds {
+                inBranches("+:*project11")
+                inPersonalBuilds = nonPersonal()
+                withStatus = successful()
+            }
+            dataToKeep = historyAndStatistics {
+                preserveArtifacts = byPattern("+:**")
+            }
+            preserveArtifactsDependencies = true
+        }
+        keep {
             id = "KEEP_RULE_119"
             keepAtLeast = allBuilds()
             applyToBuilds {
