@@ -11,7 +11,7 @@ accordingly, and delete the patch script.
 changeBuildType(RelativeId("Cleanup9con")) {
     cleanup {
         remove {
-            keep {
+            keepRule {
                 disabled = true
                 id = "KEEP_RULE_129"
                 keepAtLeast = allBuilds()
