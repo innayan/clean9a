@@ -12,5 +12,23 @@ in the project with id = 'Cleanup9x_Cleanup9y_Cleanup9z', and delete the patch s
 create(RelativeId("Cleanup9x_Cleanup9y_Cleanup9z"), BuildType({
     id("Cleanup9x_Cleanup9y_Cleanup9z_Bbb")
     name = "bbb"
+
+    cleanup {
+        keepRule {
+            id = "KEEP_RULE_101"
+            keepAtLeast = builds(411)
+            applyToBuilds {
+                inBranches {
+                    branchFilter = patterns("+:*project11")
+                }
+                inPersonalBuilds = nonPersonal()
+                withStatus = successful()
+            }
+            dataToKeep = historyAndStatistics {
+                preserveArtifacts = byPattern("+:**")
+            }
+            preserveArtifactsDependencies = true
+        }
+    }
 }))
 
