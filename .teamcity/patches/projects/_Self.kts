@@ -45,5 +45,39 @@ changeProject(DslContext.projectId) {
                 preserveArtifactsDependencies = true
             }
         }
+        expect {
+            keepRule {
+                id = "KEEP_RULE_101"
+                keepAtLeast = builds(411)
+                applyToBuilds {
+                    inBranches {
+                        branchFilter = patterns("+:*project11")
+                    }
+                    inPersonalBuilds = nonPersonal()
+                    withStatus = successful()
+                }
+                dataToKeep = historyAndStatistics {
+                    preserveArtifacts = byPattern("+:**")
+                }
+                preserveArtifactsDependencies = true
+            }
+        }
+        update {
+            keepRule {
+                id = "KEEP_RULE_101"
+                keepAtLeast = builds(4112)
+                applyToBuilds {
+                    inBranches {
+                        branchFilter = patterns("+:*project11")
+                    }
+                    inPersonalBuilds = nonPersonal()
+                    withStatus = successful()
+                }
+                dataToKeep = historyAndStatistics {
+                    preserveArtifacts = byPattern("+:**")
+                }
+                preserveArtifactsDependencies = true
+            }
+        }
     }
 }
